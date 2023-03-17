@@ -11,7 +11,7 @@ int main(void)
 {
 	int number = 0;
 
-	while (number < 9)
+	while (number <= 9)
 	{
 		putchar('0' + number);
 		if (number != 9)
@@ -21,6 +21,6 @@ int main(void)
 		}
 		number++;
 	}
-	putchar('9');
+	putchar('\n');
 	return (0);
 }
