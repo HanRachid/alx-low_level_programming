@@ -9,11 +9,11 @@
  */
 int main(void)
 {
-	char number = '0';
+	int number = 0;
 
-	while (number <= '9')
+	while (number <= 9)
 	{
-		putchar(number);
+		putchar('0' + number);
 		putchar(',');
 		putchar(' ');
 		number++;
