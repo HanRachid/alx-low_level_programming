@@ -1,8 +1,9 @@
 #include <stdlib.h>
 #include <time.h>
 #include <stdio.h>
-/** 
+/**
  * main - function containing algorithms to check random number's sign
+ *
  * Return : returns 0, always a success
  */
 int main(void)
