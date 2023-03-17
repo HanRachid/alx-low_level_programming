@@ -3,7 +3,7 @@
 #include <stdio.h>
 /** 
  * main - function containing algorithms to check random number's sign
- * Return : 0, always ends
+ * Return : returns 0, always a success
  */
 int main(void)
 {
