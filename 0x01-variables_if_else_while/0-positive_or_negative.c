@@ -4,7 +4,7 @@
 /**
  * main - function containing algorithms to check random number's sign
  *
- * Return : returns 0, always a success
+ * Return: returns 0, always a success
  */
 int main(void)
 {
