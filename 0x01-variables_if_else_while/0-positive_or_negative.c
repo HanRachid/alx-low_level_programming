@@ -1,10 +1,9 @@
 #include <stdlib.h>
 #include <time.h>
 #include <stdio.h>
-/* more headers goes there */
-
 /** 
- * main function containing algorithms to check random number's sign
+ * main - function containing algorithms to check random number's sign
+ * Return : 0, always ends
  */
 int main(void)
 {
