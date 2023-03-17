@@ -28,6 +28,6 @@ int main(void)
 	{
 		printf("Last digit of %d is 0 and is 0", n);
 	}
-
+	putchar('\n');
 	return (0);
 }
