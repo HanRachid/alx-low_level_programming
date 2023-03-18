@@ -3,7 +3,7 @@
 #include <stdio.h>
 
 /**
- * main - prints all alphabet in reverse and lowercase
+ * main - prints all hexadecimal numbers
  *
  * Return: always 0
  */
