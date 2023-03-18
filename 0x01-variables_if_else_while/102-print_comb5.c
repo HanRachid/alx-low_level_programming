@@ -33,7 +33,10 @@ int main(void)
 					numberd++;
 				}
 				numberc++;
-				numberd = 0;
+				if (numbera != numberc)
+					numberd = 0;
+				else
+					numberd = 1;
 			}
 			numberb++;
 			numberd = numberb + 1;
