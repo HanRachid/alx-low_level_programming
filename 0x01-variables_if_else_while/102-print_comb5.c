@@ -3,16 +3,13 @@
 #include <stdio.h>
 
 /**
- * main - prints all alphabet in reverse and lowercase
+ * main - prints all combination of two double digits
  *
  * Return: always 0
  */
 int main(void)
 {
-	int numbera = 0;
-	int numberb = 0;
-	int numberc = 0;
-	int numberd = 0;
+	int numbera = 0, numberb = 0, numberc = 0, numberd = 1;
 
 	while (numbera <= 9)
 	{
@@ -23,18 +20,15 @@ int main(void)
 				while (numberd <= 9)
 				{
 
-					if (numbera != numberc || numberb != numberd)
+					putchar('0' + numbera);
+					putchar('0' + numberb);
+					putchar(' ');
+					putchar('0' + numberc);
+					putchar('0' + numberd);
+					if (numbera != 9 || numberb != 8 || numberc != 9 || numberd != 9)
 					{
-						putchar('0' + numbera);
-						putchar('0' + numberb);
+						putchar(',');
 						putchar(' ');
-						putchar('0' + numberc);
-						putchar('0' + numberd);
-						if (numbera != 9 || numberb != 8 || numberc != 9 || numberd != 9)
-						{
-							putchar(',');
-							putchar(' ');
-						}
 					}
 					numberd++;
 				}
@@ -42,7 +36,7 @@ int main(void)
 				numberd = 0;
 			}
 			numberb++;
-			numberd = numberb;
+			numberd = numberb + 1;
 			numberc = numbera;
 		}
 		numbera++;
