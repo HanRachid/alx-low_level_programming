@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 /**
  * print_to_98 - print all numbers from starting number to 98
  *@n: number from which we start printing until 98
