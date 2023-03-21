@@ -5,8 +5,10 @@
  * Return: void
  */
 void jack_bauer(void)
-{
-	for (int h = 0; h < 24; h++)
+{	
+	int h;
+
+	for (h = 0; h < 24; h++)
 	{
 		for(int m = 0; m < 60; m++)
 		{
