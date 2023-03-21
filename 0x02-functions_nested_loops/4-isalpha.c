@@ -6,9 +6,9 @@
  */
 int _alpha(int c)
 {
-	if (c =< 'z' && c => 'a')
+	if (c <= 'z' && c >= 'a')
 		return (1);
-	if (c =< 'Z' && c => 'A')
+	if (c <= 'Z' && c >= 'A')
 		return (1);
 	return (0);
 }
