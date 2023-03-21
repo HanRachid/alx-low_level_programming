@@ -11,27 +11,27 @@ void times_table(void)
 
 	for (h = 0; h < 10; h++)
 	{
-		putchar('0');
-		putchar(',');
+		_putchar('0');
+		_putchar(',');
 		for (m = 1; m < 10; m++)
 		{
 			int number = h * m;
 
 			if (number / 10 > 0)
 			{
-				putchar(' ');
-				putchar(' ');
-				putchar('0' + number / 10);
-				putchar('0' + number % 10);
-				putchar(',');
+				_putchar(' ');
+				_putchar(' ');
+				_putchar('0' + number / 10);
+				_putchar('0' + number % 10);
+				_putchar(',');
 			}
 			else
 			{
-				putchar(' ');
-				putchar(' ');
-				putchar(' ');
-				putchar('0' + number);
-				putchar(',');
+				_putchar(' ');
+				_putchar(' ');
+				_putchar(' ');
+				_putchar('0' + number);
+				_putchar(',');
 			}
 		}
 		putchar('\n');
