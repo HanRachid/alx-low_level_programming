@@ -1,4 +1,5 @@
 #include "main.h"
+#include <limits.h>
 /**
  * print_last_digit - get last digit of int
  * @n: int to get last digit of
