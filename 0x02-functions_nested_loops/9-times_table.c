@@ -23,7 +23,7 @@ void times_table(void)
 				_putchar('0' + number / 10);
 				_putchar('0' + number % 10);
 				if (m < 9)
-					_putchar(',')
+					_putchar(',');
 			}
 			else
 			{
@@ -31,7 +31,7 @@ void times_table(void)
 				_putchar(' ');
 				_putchar('0' + number);
 				if (m < 9)
-					_putchar(',')
+					_putchar(',');
 			}
 		}
 		_putchar('\n');
