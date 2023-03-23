@@ -2,7 +2,7 @@
 
 /**
  * _isupper - checks if parameter is uppercase in ascii table
- *
+ *@c: integer to check
  * Return: 1 if parameter is uppercase, 0 otherwise
  */
 int _isupper(int c)

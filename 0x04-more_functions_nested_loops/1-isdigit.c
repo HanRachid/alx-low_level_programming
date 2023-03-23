@@ -2,7 +2,7 @@
 
 /**
  * _isdigit - checks if parameter is a digit (0-9)
- *
+ * @c: integer to check
  * Return: 1 if parameter is a digit, 0 otherwise
  */
 int _isdigit(int c)
