@@ -17,6 +17,8 @@ int main()
 {
 	_putchar('a');
 	_putchar('\n');
-	print_numbers();
+	print_diagonal(5);
+	print_diagonal(3);
+	_putchar('\n');
 	return (0);
 }
