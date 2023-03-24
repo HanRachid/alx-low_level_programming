@@ -15,10 +15,9 @@ int _putchar(char c)
 
 int main()
 {
-	_putchar('a');
-	_putchar('\n');
-	print_diagonal(5);
-	print_diagonal(3);
-	_putchar('\n');
+	print_diagonal(0);
+	print_diagonal(2);
+	print_diagonal(10);
+	print_diagonal(-4);
 	return (0);
 }
