@@ -3,11 +3,13 @@
 /**
  * print_square - print a square made of # of size @size
  * @size: size of square
+ * Return: Void
  */
 
 void print_square(int size)
 {
-	int i,j;
+	int i;
+	int j;
 
 	if (size > 0)
 	{
