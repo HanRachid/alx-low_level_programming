@@ -20,6 +20,6 @@ int main(void)
 			currentfactor = i;
 		}
 	}
-	printf("%ld", i);
+	printf("%ld\n", i);
 	return (0);
 }
