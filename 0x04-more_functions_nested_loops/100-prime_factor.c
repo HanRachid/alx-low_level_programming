@@ -21,4 +21,5 @@ int main(void)
 		}
 	}
 	printf("%ld", i);
+	return (0);
 }
