@@ -2,7 +2,7 @@
 
 /**
  * _puts - prints char until \0 char is encountered
- * @s: pointer to the first element of a string
+ * @str: pointer to the first element of a string
  * Return: void
  */
 
