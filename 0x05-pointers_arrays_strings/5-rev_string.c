@@ -1,22 +1,23 @@
 #include "main.h"
 
 /**
- * _print_rev - prints string in reverse
+ * rev_string - reverses string
  * @s: pointer to the first element of a string
  * Return: void
  */
 
-void print_rev(char *s)
+void rev_string(char *s)
 {
 	char *n = s;
+	char *m = s;
 	int i;
-	int len = _strlen(n);
+	int len = strlen(n);
 
 	n = n + len;
 	for (i = 0; i < len; i++)
 	{
-		_putchar(*n);
+		*m = *n;
+		m++;
 		n--;
 	}
-	_putchar('\n');
 }
