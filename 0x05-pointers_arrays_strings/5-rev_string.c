@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include "main.h"
 
 /**
@@ -11,7 +12,7 @@ void rev_string(char *s)
 	char *n = s;
 	char *m = s;
 	int i;
-	int len = _strlen(n);
+	int len =  strlen(n);
 
 	n = n + len;
 	for (i = 0; i < len; i++)
