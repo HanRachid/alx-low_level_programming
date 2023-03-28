@@ -9,7 +9,7 @@
 
 void rev_string(char *s)
 {
-	int size = strlen(s) - 1;
+	int size = strlen(s);
 	int mid = strlen(s) / 2;
 	int temp1, temp2;
 	int i;
