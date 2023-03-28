@@ -1,4 +1,5 @@
 #include "main.h"
+#include <string.h>
 /**
  * puts_half - prints half of string
  * @str: pointer to the first element of a string
