@@ -1,5 +1,5 @@
 #include <string.h>
-// #include "main.h"
+#include "main.h"
 /**
  * _strncpy - copies a number of elements from str to another string
  * @dest: pointer to the first element of destination string
