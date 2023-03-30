@@ -18,10 +18,8 @@ void reverse_array(int *a, int n)
 	{
 
 		temp1 = *a;
-
 		a += n - 2 * i - 1;
 		temp2 = *a;
-
 		*a = temp1;
 		a -= n - 2 * i - 1;
 		*a = temp2;

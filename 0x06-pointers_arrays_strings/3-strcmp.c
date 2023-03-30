@@ -16,9 +16,9 @@ int _strcmp(char *s1, char *s2)
 	for (i = 0; i < size; i++)
 	{
 		if (*s1 > *s2)
-			return (1);
+			return (15);
 		else if (*s2 > *s1)
-			return (-1);
+			return (-15);
 		s1++, s2++;
 	}
 	return (0);
