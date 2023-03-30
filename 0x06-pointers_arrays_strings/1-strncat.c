@@ -1,7 +1,7 @@
 #include <string.h>
 #include "main.h"
 /**
- * _strcat - appends a number of elements from str on top of another string
+ * _strncat - appends a number of elements from str on top of another string
  * @dest: pointer to the first element of destination string
  * @src: pointer to the first element of source string
  * @n: number of chars at most appended
@@ -16,7 +16,8 @@ char *_strncat(char *dest, char *src, int n)
 	while (*src != '\0' || i < n)
 	{
 		i++;
-		*ptr++ = *src++;
+		if (*src != '\n')
+			*ptr++ = *src++;
 	}
 
 	*ptr = '\0';
