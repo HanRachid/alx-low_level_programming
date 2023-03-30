@@ -19,7 +19,5 @@ char *_strncat(char *dest, char *src, int n)
 		if (*src != '\0')
 			*ptr++ = *src++;
 	}
-	*ptr++ = *src++;
-	*ptr = '\0';
 	return (dest);
 }
