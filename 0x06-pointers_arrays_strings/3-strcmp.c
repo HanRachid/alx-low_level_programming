@@ -11,8 +11,9 @@
 int _strcmp(char *s1, char *s2)
 {
 	int size = strlen(s1);
+	int i;
 
-	for (int i = 0; i < size; i++)
+	for (i = 0; i < size; i++)
 	{
 		if (*s1 > *s2)
 			return (1);
