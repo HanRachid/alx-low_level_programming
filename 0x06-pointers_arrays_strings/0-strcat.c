@@ -1,3 +1,4 @@
+#include <string.h>
 #include "main.h"
 /**
  * _strcat - appends str on top of another string
@@ -8,7 +9,7 @@
 
 char *_strcat(char *dest, char *src)
 {
-	char *ptr = dest + ft_strlen(dest);
+	char *ptr = dest + strlen(dest);
 
 	while (*src != '\0')
 	{
