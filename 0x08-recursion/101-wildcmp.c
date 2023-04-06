@@ -1,3 +1,5 @@
+#include <stddef.h>
+
 /**
  * _help - helper function for wildcmp
  * @s1: first str
