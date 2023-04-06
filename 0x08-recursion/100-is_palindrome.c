@@ -16,7 +16,7 @@ int is_palindrome_helper(char *s, char *d)
 			return (0);
 		d++;
 		s--;
-		is_palindrome_helper(s, d);
+		return (is_palindrome_helper(s, d));
 	}
 	return (1);
 }
