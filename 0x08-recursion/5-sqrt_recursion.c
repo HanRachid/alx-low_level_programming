@@ -8,7 +8,7 @@
 int _sqrt_recursion_helper(int n, int div)
 {
 
-	if (n > 0)
+	if (div < n)
 	{
 		if (div * div == n)
 			return (div);
@@ -16,8 +16,9 @@ int _sqrt_recursion_helper(int n, int div)
 		{
 			return (-1);
 		}
-		return (_sqrt_recursion_helper(n, div - 1));
+		return (_sqrt_recursion_helper(n, div + 1));
 	}
+
 	return (-1);
 }
 
@@ -29,11 +30,13 @@ int _sqrt_recursion_helper(int n, int div)
 
 int _sqrt_recursion(int n)
 {
-	int div = n;
+	int div = 2;
 
 	if (n < 1)
 	{
 		return (-1);
 	}
+	else if (n == 1)
+		return (1);
 	return (_sqrt_recursion_helper(n, div));
 }
