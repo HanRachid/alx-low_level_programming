@@ -29,7 +29,7 @@ int _sqrt_recursion_helper(int n, int div)
 
 int _sqrt_recursion(int n)
 {
-	int div = n / 2;
+	int div = n;
 
 	if (n < 1)
 	{
