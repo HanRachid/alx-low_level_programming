@@ -1,5 +1,6 @@
 #include <string.h>
 #include <stdio.h>
+#include <stdlib.h>
 
 /**
  * main - prints sum of all parameters apart from first
@@ -26,7 +27,7 @@ int main(int argc, char *argv[])
 			}
 			ptr++;
 		}
-		sum += *argv[i];
+		sum += atoi(argv[i]);
 	}
 
 	printf("%d\n", sum);
