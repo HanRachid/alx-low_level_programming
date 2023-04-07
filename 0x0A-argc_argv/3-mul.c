@@ -1,4 +1,5 @@
 #include <string.h>
+#include <stdio.h>
 
 /**
  * main - prints product of 2nd and 3rd argument

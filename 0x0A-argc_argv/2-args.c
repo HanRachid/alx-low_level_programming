@@ -1,4 +1,5 @@
 #include <string.h>
+#include <stdio.h>
 
 /**
  * main - prints name of all parameters
