@@ -1,5 +1,6 @@
 #include <string.h>
 #include <stdio.h>
+#include <stdlib.h>
 
 /**
  * main - prints product of 2nd and 3rd argument
@@ -19,7 +20,7 @@ int main(int argc, char *argv[])
 		return (1);
 	}
 	for (i = 1; i < argc; i++)
-		prod = (*argv[1]) * (*argv[2]);
+		prod = atoi(argv[1]) * atoi(argv[2]);
 	printf("%d\n", prod);
 	return (0);
 }
