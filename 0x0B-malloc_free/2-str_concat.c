@@ -3,7 +3,8 @@
 #include <string.h>
 
 /**
- * _strdup - creates pointer to array and concatenates string from parameters into it
+ * str_concat - creates pointer to array and 
+ * concatenates string from parameters into it
  * @s1: pointer to first string
  * @s2: pointer to second string
  * Return: pointer to new array
