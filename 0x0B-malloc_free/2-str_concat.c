@@ -2,6 +2,13 @@
 #include <stdlib.h>
 #include <string.h>
 
+/**
+ * str_concat - creates pointer to array and concatenates
+ * string from parameters into it
+ * @s1: pointer to first string
+ * @s2: pointer to second string
+ * Return: pointer to new array
+ */
 char *str_concat(char *s1, char *s2)
 {
 	int size1 = 0, size2 = 0, i = 0;
