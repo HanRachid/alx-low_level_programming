@@ -35,8 +35,6 @@ char *str_concat(char *s1, char *s2)
 	}
 
 	arr = malloc(sizeof(char) * size1 + sizeof(char) * size2 + 1);
-	if (!arr)
-		return (NULL);
 	while (*ptr1 != '\0')
 	{
 
