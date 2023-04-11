@@ -3,8 +3,8 @@
 #include <string.h>
 
 /**
- * str_concat - creates pointer to array and 
- * concatenates string from parameters into it
+ * _strdup - creates pointer to array and concatenates
+ * string from parameters into it
  * @s1: pointer to first string
  * @s2: pointer to second string
  * Return: pointer to new array
@@ -21,14 +21,20 @@ char *str_concat(char *s1, char *s2)
 	ptr2 = s2;
 
 	if (s1 == NULL)
+	{
 		ptr1 = "";
+		size1 = 0;
+	}
 	else
 	{
 		ptr1 = s1;
 		size1 = strlen(s1);
 	}
 	if (s2 == NULL)
+	{
 		ptr2 = "";
+		size2 = 0;
+	}
 	else
 	{
 		ptr2 = s2;
@@ -36,6 +42,8 @@ char *str_concat(char *s1, char *s2)
 	}
 
 	arr = malloc(sizeof(char) * size1 + sizeof(char) * size2 + 1);
+	if (!arr)
+		return (NULL);
 	while (*ptr1 != '\0')
 	{
 
