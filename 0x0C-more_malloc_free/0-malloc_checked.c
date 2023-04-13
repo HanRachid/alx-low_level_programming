@@ -1,7 +1,5 @@
 #include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
-#include <limits.h>
+#include "main.h"
 
 /**
  * malloc_checked - checks if malloc succeeds
@@ -11,7 +9,9 @@
  */
 void *malloc_checked(unsigned int b)
 {
-	if (malloc(b) == NULL)
+	int *ptr = malloc(b);
+
+	if (ptr == NULL)
 		exit(98);
-	return (malloc(b));
+	return ptr;
 }
