@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include <string.h>
 #include "main.h"
-
 /**
  * string_nconcat - checks if malloc succeeds
  * @s1: first str
@@ -23,40 +22,25 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	if (n > strlen(s2))
 	{
 		ptr = malloc(sizeof(s1) + sizeof(s2));
-		while (*s1 != '\0')
-		{
-			printf("%c", ptr[i]);
-			ptr[i] = *s1;
-			s1++, i++;
-		}
-
-		while (*s2 != '\0')
-		{
-			printf("%c", ptr[i]);
-			ptr[i] = *s2;
-			s2++, i++;
-		}
 	}
 	else
 	{
 
 		ptr = malloc(sizeof(s1) + n * sizeof(char));
-		while (*s1 != '\0')
-		{
-
-			ptr[i] = *s1;
-
-			s1++, i++;
-		}
-		ptr[i] = '\0';
-
-		for (i = 0; i < (int)n; i++)
-		{
-			ptr[i + len] = *s2;
-			s2++;
-		}
-		ptr[len + n] = '\0'
 	}
+	while (*s1 != '\0')
+	{
+		ptr[i] = *s1;
+		s1++, i++;
+	}
+	i = 0;
+	while (*s2 != '\0' && i < (int)n)
+	{
+		ptr[i + len] = *s2;
+		s2++, i++;
+	}
+
+	ptr[i + len] = '\0';
 	if (ptr == NULL)
 		return (NULL);
 	return (ptr);
