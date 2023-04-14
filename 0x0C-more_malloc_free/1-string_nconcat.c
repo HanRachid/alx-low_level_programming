@@ -48,14 +48,15 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 			s1++, i++;
 		}
+		ptr[i] = '\0';
 
 		for (i = 0; i < (int)n; i++)
 		{
 			ptr[i + len] = *s2;
 			s2++;
 		}
+		ptr[len + n] = '\0'
 	}
-
 	if (ptr == NULL)
 		return (NULL);
 	return (ptr);
