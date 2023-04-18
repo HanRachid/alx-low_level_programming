@@ -1,7 +1,7 @@
 #include "dog.h"
 #include <stdlib.h>
 #include <string.h>
-
+#include <stdio.h>
 /**
  * new_dog - creates instance of dog_t
  * @name: name of dog
@@ -25,4 +25,12 @@ dog_t *new_dog(char *name, float age, char *owner)
 	dog->age = age;
 
 	return (dog);
+}
+
+int main()
+{
+	dog_t *my_dog;
+	my_dog = new_dog("Poppy", 3.5, "Bob");
+	printf("My name is %s, and I am %.1f :) - Woof!\n", my_dog->name, my_dog->age);
+	return (0);
 }
