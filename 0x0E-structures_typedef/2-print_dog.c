@@ -4,7 +4,7 @@
 #include "dog.h"
 
 /**
- * print_dog : prints members of dog in structured way
+ * print_dog - prints members of dog in structured way
  * @d: an instance of dog
  *
  * Return: void
