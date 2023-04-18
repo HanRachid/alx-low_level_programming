@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "header.h"
+#include "dog.h"
 
 /**
  * print_dog : prints members of dog in structured way
