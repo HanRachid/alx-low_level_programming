@@ -1,4 +1,4 @@
-#include "calc.h"
+#include "3-calc.h"
 
 /**
  * op_add - prints index of element that satisfied cmp
