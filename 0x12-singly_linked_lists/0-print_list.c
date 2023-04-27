@@ -3,8 +3,7 @@
 #include <stdio.h>
 #include "lists.h"
 /**
- * print_numbers - prints all numbers
- * @separator: separator
+ * print_list - prints list according to format
  * @h : pointer to list_t instance
  * Return: number of nodes
  */
