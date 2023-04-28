@@ -3,6 +3,13 @@
 #include <stdio.h>
 #include "lists.h"
 
+/**
+ * add_note_end- add node to list end
+ * @head: pointer to address of head node
+ * @str: pointer to str
+ * Return: address to new node
+ */
+
 list_t *add_node_end(list_t **head, const char *str)
 {
 	list_t *currentnode, *ptrhead;
