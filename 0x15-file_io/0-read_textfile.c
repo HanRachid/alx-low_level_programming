@@ -3,22 +3,54 @@
 #include "main.h"
 
 /**
- * main - check the code
- *
- * Return: Always 0.
+ * read_textfile - reads text of input file and outputs to standard output
+ * Only prints up to buffer size
+ * @filename: name of txt file
+ * @letters: num of letters to print
+ * Return: num of chars printed
  */
-int main(int ac, char **av)
+ssize_t read_textfile(const char *filename, size_t letters)
 {
-	ssize_t n;
+	int fd;
+	long int i = 0;
+	long int n = 0;
+	char *buf;
 
-	if (ac != 2)
+	if (filename == NULL)
+		return (0);
+
+	fd = open(filename, O_RDWR);
+	if (fd == -1)
+		return (0);
+
+	buf = malloc(sizeof(char) * letters);
+	if (buf == NULL)
 	{
-		dprintf(2, "Usage: %s filename\n", av[0]);
-		exit(1);
+		close(fd);
+		return (0);
 	}
-	n = read_textfile(av[1], 114);
-	printf("\n(printed chars: %li)\n", n);
-	n = read_textfile(av[1], 1024);
-	printf("\n(printed chars: %li)\n", n);
-	return (0);
+
+	i = read(fd, buf, letters);
+	if (i == -1)
+	{
+		free(buf);
+		return (0);
+	}
+	buf[i] = '\0';
+
+	n = write(STDOUT_FILENO, buf, i);
+	if (n == -1)
+	{
+		free(buf);
+		return (0);
+	}
+
+	close(fd);
+	if (fd == -1)
+	{
+		free(buf);
+		return (0);
+	}
+	free(buf);
+	return (i);
 }
