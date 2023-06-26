@@ -1,13 +1,16 @@
-#ifndef MONTY
-#define MONTY
+#ifndef __MONTY_H__
+#define __MONTY_H__
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <fcntl.h>
-#include <ctype.h>
+
+#define STACK 0
+#define QUEUE 1
+#define DELIMS " \n\t\a\b"
+
+/* GLOBAL OPCODE TOKENS */
+extern char **op_toks;
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -26,28 +29,6 @@ typedef struct stack_s
 } stack_t;
 
 /**
- * struct globals - global structure to use in the functions
- * @lifo: is stack or queue
- * @cont: current line
- * @arg: second parameter inside the current line
- * @head: doubly linked list
- * @fd: file descriptor
- * @buffer: input text
- *
- * Description: doubly linked list node structure
- * for stack, queues, LIFO, FIFO Holberton project
- */
-typedef struct globals
-{
-	int lifo;
-	unsigned int cont;
-	char  *arg;
-	stack_t *head;
-	FILE *fd;
-	char *buffer;
-} global_t;
-
-/**
  * struct instruction_s - opcode and its function
  * @opcode: the opcode
  * @f: function to handle the opcode
@@ -58,46 +39,51 @@ typedef struct globals
 typedef struct instruction_s
 {
 	char *opcode;
-	void (*f)(stack_t **stack, unsigned int line_number);
+	void (*f)(stack_t **stack, unsigned int lineNum);
 } instruction_t;
 
-extern global_t vglo;
+/* PRIMARY INTERPRETER FUNCTIONS */
+void freeStack(stack_t **stack);
+int initStack(stack_t **stack);
+int checkMode(stack_t *stack);
+void freeTokens(void);
+unsigned int tokenArrLen(void);
+int runMonty(FILE *script_fd);
+void setErrorToken(int error_code);
 
-/* opcode_instructuions*/
-void _push(stack_t **stack, unsigned int line_number);
-void _pall(stack_t **stack, unsigned int line_number);
-void _pint(stack_t **doubly, unsigned int cline);
-void _pop(stack_t **doubly, unsigned int cline);
-void _swap(stack_t **doubly, unsigned int cline);
-void _queue(stack_t **doubly, unsigned int cline);
-void _stack(stack_t **doubly, unsigned int cline);
-void _add(stack_t **doubly, unsigned int cline);
-void _nop(stack_t **doubly, unsigned int cline);
-void _sub(stack_t **doubly, unsigned int cline);
-void _div(stack_t **doubly, unsigned int cline);
-void _mul(stack_t **doubly, unsigned int cline);
-void _mod(stack_t **doubly, unsigned int cline);
-void _pchar(stack_t **doubly, unsigned int cline);
-void _pstr(stack_t **doubly, unsigned int cline);
-void _rotl(stack_t **doubly, unsigned int cline);
-void _rotr(stack_t **doubly, unsigned int cline);
+/* OPCODE FUNCTIONS */
+void montyPush(stack_t **stack, unsigned int lineNum);
+void montyPall(stack_t **stack, unsigned int lineNum);
+void montyPint(stack_t **stack, unsigned int lineNum);
+void montyPop(stack_t **stack, unsigned int lineNum);
+void montySwap(stack_t **stack, unsigned int lineNum);
+void montyAdd(stack_t **stack, unsigned int lineNum);
+void montyNop(stack_t **stack, unsigned int lineNum);
+void montySub(stack_t **stack, unsigned int lineNum);
+void montyDiv(stack_t **stack, unsigned int lineNum);
+void montyMul(stack_t **stack, unsigned int lineNum);
+void montyMod(stack_t **stack, unsigned int lineNum);
+void montyPchar(stack_t **stack, unsigned int lineNum);
+void montyPstr(stack_t **stack, unsigned int lineNum);
+void montyRotl(stack_t **stack, unsigned int lineNum);
+void montyRotr(stack_t **stack, unsigned int lineNum);
+void montyStack(stack_t **stack, unsigned int lineNum);
+void montyQueue(stack_t **stack, unsigned int lineNum);
 
-/*get function*/
-void (*get_opcodes(char *opc))(stack_t **stack, unsigned int line_number);
+/* CUSTOM STANDARD LIBRARY FUNCTIONS */
+char **strtow(char *str, char *delims);
+char *getInt(int n);
 
-/*imported functions*/
-int _sch(char *s, char c);
-char *_strtoky(char *s, char *d);
-void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
-void *_calloc(unsigned int nmemb, unsigned int size);
-int _strcmp(char *s1, char *s2);
+/* ERROR MESSAGES & ERROR CODES */
+int handleErrorUsage(void);
+int handleErrorMalloc(void);
+int handleErrorFileOpen(char *filename);
+int handleErrorUnknownOp(char *opcode, unsigned int lineNum);
+int handleErrorNoInt(unsigned int lineNum);
+int handleErrorPop(unsigned int lineNum);
+int handleErrorPint(unsigned int lineNum);
+int handleErrorShortStack(unsigned int lineNum, char *op);
+int handleErrorDiv(unsigned int lineNum);
+int handleErrorPChar(unsigned int lineNum, char *message);
 
-/* doubly linked list functions */
-stack_t *add_dnodeint_end(stack_t **head, const int n);
-stack_t *add_dnodeint(stack_t **head, const int n);
-void free_dlistint(stack_t *head);
-
-/* main */
-void free_vglo(void);
-
-#endif
+#endif /* __MONTY_H__ */
