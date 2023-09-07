@@ -1,5 +1,5 @@
 #include "hash_tables.h"
-
+#include <stdlib.h>
 /**
  *hash_table_delete - Deletes hash table.
  * @ht: Pointer to hash table to be deleted.
